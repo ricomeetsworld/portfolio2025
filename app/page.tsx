@@ -27,14 +27,68 @@ export default function Home() {
             <p className="text-muted-foreground">My name is Enric J Trillo Nchana and I'm a fullstack developer, solopreneur and creator based in 🇬🇧 London. Focused on disruptive technologies. Nice to have you here!</p>
           </div>
         </div>
-        <div className="flex flex-wrap justify-center gap-2">
-          <div className="rounded-full bg-slate-200 cursor-pointer hover:bg-slate-300 duration-300 px-4 py-1">@ricomeetsworld</div>
-          <div className="rounded-full bg-slate-200 cursor-pointer hover:bg-slate-300 duration-300 px-4 py-1">@ricomeetsworld</div>
-          <div className="rounded-full bg-slate-200 cursor-pointer hover:bg-slate-300 duration-300 px-4 py-1">/enrictrillo</div>
-          <div className="rounded-full bg-slate-200 cursor-pointer hover:bg-slate-300 duration-300 px-4 py-1">@ricomeetsworld</div>
+        <div className="flex flex-wrap justify-center gap-2 text-sm">
+          <div className="rounded-full flex items-center gap-1 bg-slate-200 dark:bg-[#111111] cursor-pointer hover:bg-slate-300 dark:hover:bg-[#161616] duration-300 px-4 py-1">
+            <div className="w-5 h-5">
+              <Image
+                src={"/x.svg"}
+                alt="X Profile"
+                width={20}
+                height={20}
+                className="w-5 h-5 dark:invert"
+              />
+            </div>
+            @ricomeetsworld
+          </div>
+          <div className="rounded-full flex items-center gap-1 bg-slate-200 dark:bg-[#111111] cursor-pointer hover:bg-slate-300 dark:hover:bg-[#161616] duration-300 px-4 py-1">
+            <div className="w-5 h-5">
+              <Image
+                src={"/linkedin.svg"}
+                alt="LinkedIn Profile"
+                width={20}
+                height={20}
+                className="w-5 h-5"
+              />
+            </div>
+            /enrictrillo
+          </div>
+          <div className="rounded-full flex items-center gap-1 bg-slate-200 dark:bg-[#111111] cursor-pointer hover:bg-slate-300 dark:hover:bg-[#161616] duration-300 px-4 py-1">
+            <Image
+              src={"/youtube.svg"}
+              alt="YouTube Channel"
+              width={20}
+              height={20}
+              className="w-5 h-5"
+            />
+            @ricomeetsworld
+          </div>
+          <div className="rounded-full flex items-center gap-1 bg-slate-200 dark:bg-[#111111] cursor-pointer hover:bg-slate-300 dark:hover:bg-[#151515] duration-300 px-4 py-1">
+            <div className="w-5 h-5">
+              <Image
+                src={"/github.svg"}
+                alt="Github Profile"
+                width={20}
+                height={20}
+                className="w-5 h-5 dark:invert"
+              />
+            </div>
+            @ricomeetsworld
+          </div>
+          <div className="rounded-full flex items-center gap-1 bg-slate-200 dark:bg-[#111111] cursor-pointer hover:bg-slate-300 dark:hover:bg-[#161616] duration-300 px-4 py-1">
+            <div className="w-5 h-5">
+              <Image
+                src={"/bsky.svg"}
+                alt="Medium Profile"
+                width={20}
+                height={20}
+                className="w-5 h-5"
+              />
+            </div>
+            @ricomeetsworld
+          </div>
         </div>
         <div className="">
-          <h3 className="mb-8 mt-16 text-base border-b border-slate-600/15 pb-4">Blogs</h3>
+          <h3 className="mb-8 mt-16 text-base font-semibold border-b border-slate-600/15 pb-4">Blogs</h3>
           <div className=" space-y-4">
             {Array(3).fill({ title: "How to get started with Phidata Agents" }).map((p, idx) => (
               <div key={idx} className="border relative duration-300 transition-all border-slate-300 rounded-lg hover:border-indigo-200 bg-white group hover:cursor-pointer shadow-sm hover:shadow-md">
