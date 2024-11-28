@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BlogCard } from "./components/blog-card";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -12,7 +13,16 @@ export default function Home() {
         <div id="hero" className="flex flex-col items-center space-y-4 text-center">
           <span className="relative flex shrink-0 overflow-hidden rounded-full w-24 h-24"><img className="aspect-square h-full w-full" alt="Profile Picture" src="https://v0.dev/placeholder.svg" /></span>
           <div className="space-y-2">
-            <h1 className="text-2xl font-bold">Enric Trillo</h1>
+            <div className="flex justify-center items-center gap-2">
+              <h1 className="text-2xl font-bold">Enric Trillo</h1>
+              <Image
+                src={"/images/twitter-badge.png"}
+                alt=""
+                width={20}
+                height={20}
+                className="w-5 h-5"
+              />
+            </div>
             <p className="font-medium text-muted-foreground">Building with disruptive tech</p>
             <p className="text-muted-foreground">My name is Enric J Trillo Nchana and I'm a fullstack developer, solopreneur and creator based in 🇬🇧 London. Focused on disruptive technologies. Nice to have you here!</p>
           </div>
@@ -26,8 +36,8 @@ export default function Home() {
         <div className="">
           <h3 className="mb-8 mt-16 text-base border-b border-slate-600/15 pb-4">Blogs</h3>
           <div className=" space-y-4">
-            {Array(3).fill({ title: "How to get started with Phidata Agents" }).map((p) => (
-              <div className="border relative duration-300 transition-all border-slate-300 rounded-lg hover:border-indigo-200 bg-white group hover:cursor-pointer shadow-sm hover:shadow-md">
+            {Array(3).fill({ title: "How to get started with Phidata Agents" }).map((p, idx) => (
+              <div key={idx} className="border relative duration-300 transition-all border-slate-300 rounded-lg hover:border-indigo-200 bg-white group hover:cursor-pointer shadow-sm hover:shadow-md">
                 {/* <span className="absolute inset-0" aria-hidden></span> */}
                 <div className="p-6 pb-2 flex justify-between">
                   <h3 className="font-semibold group-hover:text-indigo-600">{p.title}</h3>
@@ -37,6 +47,14 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <button
+            className="bg-black hover:bg-opacity-80 transition-colors duration-300 w-full py-2 font-semibold text-white rounded-md"
+          >View blog archive</button>
+        </div>
+        <div className="">
+          <h3 className="mb-8 mt-16 text-base border-b border-slate-600/15 pb-4">Short Bio</h3>
+          <p className="mb-5">My journey began with Python in February 2016 at St Francis Xavier. Progressing into a bachelor's degree at University of Northampton (2017-2020) helped me explore my passion for systems design and problem solving, contributing towards my foundation that led to me landing a £5,500/month tech contract role at 23, and building a tiny ChatGPT chrome extension with +1,100 users at its peak.</p>
+          <p>Now, I'm focused on evolving as a fullstack developer, building with disruptive technologies, and creating interactive software solutions that explore new possibilities.</p>
           <button
             className="bg-black hover:bg-opacity-80 transition-colors duration-300 w-full py-2 font-semibold text-white rounded-md"
           >View blog archive</button>
