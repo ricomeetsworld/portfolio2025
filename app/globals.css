@@ -23,3 +23,7 @@ body {
 .heading2 {
   @apply text-xl font-semibold;
 }
+
+.text-muted-foreground {
+  @apply text-slate-600;
+}

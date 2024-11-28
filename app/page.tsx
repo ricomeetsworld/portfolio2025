@@ -10,7 +10,8 @@ export default function Home() {
           <span className="relative flex shrink-0 overflow-hidden rounded-full w-24 h-24"><img className="aspect-square h-full w-full" alt="Profile Picture" src="https://v0.dev/placeholder.svg" /></span>
           <div className="space-y-2">
             <h1 className="text-2xl font-bold">Enric Trillo</h1>
-            <p className="text-muted-foreground">Fullstack Developer</p>
+            <p className="text-muted-foreground">Building with disruptive tech</p>
+            <p className="text-muted-foreground">My name is Enric Trillo and I'm a fullstack developer, wannabepreneur and creator based in 🇬🇧 London. Focused on disruptive technologies. Nice to have you here! 👋</p>
           </div>
         </div>
         <div id="newsletter" className="space-y-4">
