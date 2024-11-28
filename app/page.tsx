@@ -91,7 +91,7 @@ export default function Home() {
           <h3 className="mb-8 mt-16 text-base font-semibold border-b border-slate-600/15 pb-4">Blogs</h3>
           <div className=" space-y-4">
             {Array(3).fill({ title: "How to get started with Phidata Agents" }).map((p, idx) => (
-              <div key={idx} className="border relative duration-300 transition-all border-slate-300 rounded-lg hover:border-indigo-200 bg-white group hover:cursor-pointer shadow-sm hover:shadow-md">
+              <div key={idx} className="border relative duration-300 transition-all border-obsidian-300 dark:border-obsidian-800 rounded-lg hover:border-amethyst-300 dark:hover:border-amethyst-800 group hover:cursor-pointer shadow-sm hover:shadow-md">
                 {/* <span className="absolute inset-0" aria-hidden></span> */}
                 <div className="p-6 pb-2 flex justify-between">
                   <h3 className="font-semibold group-hover:text-indigo-600">{p.title}</h3>
