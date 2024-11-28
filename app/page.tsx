@@ -11,7 +11,7 @@ export default function Home() {
           <button>Share</button>
         </div>
         <div id="hero" className="flex flex-col items-center space-y-4 text-center">
-          <span className="relative flex shrink-0 overflow-hidden rounded-full w-24 h-24"><img className="aspect-square h-full w-full" alt="Profile Picture" src="https://v0.dev/placeholder.svg" /></span>
+          <span className="relative flex shrink-0 overflow-hidden rounded-full w-24 h-24"><img className="absolute -translate-x-1/2 left-1/2" alt="Profile Picture" src="/images/graduation.jpg" /></span>
           <div className="space-y-2">
             <div className="flex justify-center items-center gap-2">
               <h1 className="text-2xl font-bold">Enric Trillo</h1>
@@ -23,7 +23,7 @@ export default function Home() {
                 className="w-5 h-5"
               />
             </div>
-            <p className="font-medium text-muted-foreground">Building with disruptive tech</p>
+            <p className="font-semibold text-muted-foreground">Building with disruptive tech</p>
             <p className="text-muted-foreground">My name is Enric J Trillo Nchana and I'm a fullstack developer, solopreneur and creator based in 🇬🇧 London. Focused on disruptive technologies. Nice to have you here!</p>
           </div>
         </div>
