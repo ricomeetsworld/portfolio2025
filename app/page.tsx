@@ -6,32 +6,38 @@ interface ISocialSoup {
   imagePath: string
   username: string
   href: string
+  platform: string
 }
 
 export default function Home() {
   const socialSoup: ISocialSoup[] = [
     {
       imagePath: '/x.svg',
+      platform: 'X',
       username: '@ricomeetsworld',
       href: 'https://x.com/ricomeetsworld'
     },
     {
       imagePath: '/linkedin.svg',
+      platform: 'LinkedIn',
       username: '/enrictrillo',
       href: 'https://linkedin.com/in/enrictrillo'
     },
     {
       imagePath: '/youtube.svg',
+      platform: 'YouTube',
       username: '@ricomeetsworld',
       href: 'https://youtube.com/@ricomeetsworld'
     },
     {
       imagePath: '/github.svg',
+      platform: 'GitHub',
       username: '@ricomeetsworld',
       href: 'https://github.com/ricomeetsworld'
     },
     {
       imagePath: '/bsky.svg',
+      platform: 'BlueSky',
       username: '@ricomeetsworld',
       href: 'https://bsky.app/profile/ricomeetsworld.bsky.social'
     },
@@ -61,64 +67,24 @@ export default function Home() {
           </div>
         </div>
         <div className="flex flex-wrap justify-center gap-2 text-sm">
-          <div className="rounded-full flex items-center gap-1 bg-slate-200 dark:bg-[#111111] cursor-pointer hover:bg-slate-300 dark:hover:bg-[#161616] duration-300 px-4 py-1">
-            <div className="w-5 h-5">
-              <Image
-                src={"/x.svg"}
-                alt="X Profile"
-                width={20}
-                height={20}
-                className="w-5 h-5 dark:invert"
-              />
-            </div>
-            @ricomeetsworld
-          </div>
-          <div className="rounded-full flex items-center gap-1 bg-slate-200 dark:bg-[#111111] cursor-pointer hover:bg-slate-300 dark:hover:bg-[#161616] duration-300 px-4 py-1">
-            <div className="w-5 h-5">
-              <Image
-                src={"/linkedin.svg"}
-                alt="LinkedIn Profile"
-                width={20}
-                height={20}
-                className="w-5 h-5"
-              />
-            </div>
-            /enrictrillo
-          </div>
-          <div className="rounded-full flex items-center gap-1 bg-slate-200 dark:bg-[#111111] cursor-pointer hover:bg-slate-300 dark:hover:bg-[#161616] duration-300 px-4 py-1">
-            <Image
-              src={"/youtube.svg"}
-              alt="YouTube Channel"
-              width={20}
-              height={20}
-              className="w-5 h-5"
-            />
-            @ricomeetsworld
-          </div>
-          <div className="rounded-full flex items-center gap-1 bg-slate-200 dark:bg-[#111111] cursor-pointer hover:bg-slate-300 dark:hover:bg-[#151515] duration-300 px-4 py-1">
-            <div className="w-5 h-5">
-              <Image
-                src={"/github.svg"}
-                alt="Github Profile"
-                width={20}
-                height={20}
-                className="w-5 h-5 dark:invert"
-              />
-            </div>
-            @ricomeetsworld
-          </div>
-          <div className="rounded-full flex items-center gap-1 bg-slate-200 dark:bg-[#111111] cursor-pointer hover:bg-slate-300 dark:hover:bg-[#161616] duration-300 px-4 py-1">
-            <div className="w-5 h-5">
-              <Image
-                src={"/bsky.svg"}
-                alt="Medium Profile"
-                width={20}
-                height={20}
-                className="w-5 h-5"
-              />
-            </div>
-            @ricomeetsworld
-          </div>
+          {
+            socialSoup.map((s, idx) => (
+              <Link href={s.href} target="_blank">
+                <div key={idx} className="rounded-full flex items-center gap-1 bg-slate-200 dark:bg-[#111111] cursor-pointer hover:bg-slate-300 dark:hover:bg-[#161616] duration-300 px-4 py-1">
+                  <div className="w-5 h-5">
+                    <Image
+                      src={s.imagePath}
+                      alt={`${s.platform} Profile`}
+                      width={20}
+                      height={20}
+                      className="w-5 h-5 dark:invert"
+                    />
+                  </div>
+                  {s.username}
+                </div>
+              </Link>
+            ))
+          }
         </div>
         <div className="">
           <h2 className="pb-4 mt-16 mb-8 text-base font-semibold border-b border-slate-600/15">Blogs</h2>
