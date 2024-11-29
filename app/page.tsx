@@ -11,9 +11,9 @@ export default function Home() {
           <button>Share</button>
         </div>
         <div id="hero" className="flex flex-col items-center space-y-4 text-center">
-          <span className="relative flex shrink-0 overflow-hidden rounded-full w-24 h-24"><img className="absolute -translate-x-1/2 left-1/2" alt="Profile Picture" src="/images/graduation.jpg" /></span>
+          <span className="relative flex w-24 h-24 overflow-hidden rounded-full shrink-0"><img className="absolute -translate-x-1/2 left-1/2" alt="Profile Picture" src="/images/graduation.jpg" /></span>
           <div className="space-y-2">
-            <div className="flex justify-center items-center gap-2">
+            <div className="flex items-center justify-center gap-2">
               <h1 className="text-2xl font-bold">Enric Trillo</h1>
               <Image
                 src={"/images/twitter-badge.png"}
@@ -88,32 +88,36 @@ export default function Home() {
           </div>
         </div>
         <div className="">
-          <h3 className="mb-8 mt-16 text-base font-semibold border-b border-slate-600/15 pb-4">Blogs</h3>
-          <div className=" space-y-4">
+          <h2 className="pb-4 mt-16 mb-8 text-base font-semibold border-b border-slate-600/15">Blogs</h2>
+          <div className="space-y-4">
             {Array(3).fill({ title: "How to get started with Phidata Agents" }).map((p, idx) => (
-              <div key={idx} className="border relative duration-300 transition-all border-obsidian-300 dark:border-obsidian-800 rounded-lg hover:border-amethyst-300 dark:hover:border-amethyst-800 group hover:cursor-pointer shadow-sm hover:shadow-md">
-                {/* <span className="absolute inset-0" aria-hidden></span> */}
-                <div className="p-6 pb-2 flex justify-between">
-                  <h3 className="font-semibold group-hover:text-indigo-600">{p.title}</h3>
-                  <span className="text-muted-foreground">Nov 28, 2018</span>
+              <div key={idx} className="relative p-4 overflow-hidden transition-all duration-300 border rounded-md shadow-sm group hover:cursor-pointer hover:shadow-md hover:bg-muted border-obsidian-300 hover:border-amethyst-300 dark:border-obsidian-800 dark:hover:border-amethyst-800">
+                <span className="absolute inset-0" aria-hidden></span>
+                <div className="flex items-center space-x-3">
+                  <div className="flex-1">
+                    <div className="flex justify-between">
+                      <h3 className="font-semibold group-hover:text-amethyst-600">{p.title}</h3>
+                      <span>Nov 28, 2024</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground line-clamp-1">A comprehensive guide to building your first AI-powered application using top notch tools like Convex and Beacon AI</p>
+                  </div>
                 </div>
-                <p className="text-gray-600 p-6 pt-0">A comprehensive guide to building your first AI-powered application</p>
               </div>
             ))}
           </div>
           <button
-            className="bg-black hover:bg-opacity-80 transition-colors duration-300 w-full py-2 font-semibold text-white rounded-md"
-          >View blog archive</button>
+            className="w-full py-2 mt-6 font-semibold text-white transition-colors duration-300 bg-black rounded-md dark:bg-celuria-500 hover:bg-opacity-80 dark:text-black"
+          >See all posts</button>
         </div>
         <div className="">
-          <h3 className="mb-8 mt-16 text-base border-b border-slate-600/15 pb-4">Short Bio</h3>
+          <h3 className="pb-4 mt-16 mb-8 text-base font-semibold border-b border-slate-600/15">Short Bio</h3>
           <p className="mb-5">My journey began with Python in February 2016 at St Francis Xavier. Progressing into a bachelor's degree at University of Northampton (2017-2020) helped me explore my passion for systems design and problem solving, contributing towards my foundation that led to me landing a £5,500/month tech contract role at 23, and building a tiny ChatGPT chrome extension with +1,100 users at its peak.</p>
           <p>Now, I'm focused on evolving as a fullstack developer, building with disruptive technologies, and creating interactive software solutions that explore new possibilities.</p>
           <button
-            className="bg-black hover:bg-opacity-80 transition-colors duration-300 w-full py-2 font-semibold text-white rounded-md"
-          >View blog archive</button>
+            className="w-full py-2 font-semibold text-white transition-colors duration-300 bg-black rounded-md dark:bg-amethyst-500 hover:bg-opacity-80 dark:text-black"
+          >More about me</button>
         </div>
-        <div id="newsletter" className="space-y-4 bg-slate-100 p-6 rounded-md">
+        <div id="newsletter" className="p-6 space-y-4 rounded-md bg-slate-100">
           <h2 className="text-xl font-semibold">Email Newsletter</h2>
           <p>Join <strong>[Shift Forward]</strong> for disruptive tech updates, exclusive offers & members only content directly from me. We don't do spam over here, I promise!</p>
           <form className="flex flex-col gap-4">
@@ -123,7 +127,7 @@ export default function Home() {
                 id="name"
                 type="text"
                 placeholder="Type your first name"
-                className="block border py-1 px-2 rounded-md w-full"
+                className="block w-full px-2 py-1 border rounded-md"
               />
             </div>
             <div className="">
@@ -132,18 +136,69 @@ export default function Home() {
                 id="email"
                 type="email"
                 placeholder="Type your email address"
-                className="block border py-1 px-2 rounded-md w-full"
+                className="block w-full px-2 py-1 border rounded-md"
               />
             </div>
             <button
-              className="bg-black hover:bg-opacity-80 transition-colors duration-300 w-full py-2 font-semibold text-white rounded-md"
+              className="w-full py-2 font-semibold text-white transition-colors duration-300 bg-black rounded-md hover:bg-opacity-80"
             >Become a Shifter</button>
           </form>
         </div>
-        <footer className="mt-16 border-t border-white/15 pt-8 sm:flex items-center flex-row sm:justify-between">
-          <p className="text-sm leading-5 text-muted-foreground">
-            <p>© {new Date().getFullYear()} | <Link className="text-muted-foreground underline hover:text-black hover:no-underline duration-300" href={'https://metasyde.com'} target="_blank">Metasyde</Link> - All rights reserved.</p>
-          </p>
+        <div id="contact" className="">
+          <h3 className="pb-4 mt-16 mb-8 text-base font-semibold border-b border-slate-600/15">Get In Touch</h3>
+          <form className="flex flex-col gap-4">
+            <div className="">
+              <label
+                htmlFor="name"
+                className="block mb-2 font-medium"
+              >
+                Name
+              </label>
+              <input
+                id="name"
+                type="text"
+                placeholder="Type your name"
+                className="block w-full px-2 py-1 border rounded-md"
+              />
+            </div>
+            <div className="">
+              <label
+                htmlFor="email"
+                className="block mb-2 font-medium"
+              >
+                Email
+              </label>
+              <input
+                id="email"
+                type="email"
+                placeholder="Type your email address"
+                className="block w-full px-2 py-1 border rounded-md"
+              />
+            </div>
+            <div className="">
+              <label
+                htmlFor="message"
+                className="block mb-2 font-medium"
+              >
+                Message
+              </label>
+              <textarea
+                id="message"
+                required
+                rows={4}
+                placeholder="Type your message"
+                className="flex w-full px-2 py-1 border rounded-md min-h-[80px]"
+              />
+            </div>
+            <button
+              className="w-full py-2 font-semibold text-white transition-colors duration-300 bg-black rounded-md hover:bg-opacity-80"
+            >Submit</button>
+          </form>
+        </div>
+        <footer className="flex-row items-center pt-8 mt-16 border-t border-white/15 sm:flex sm:justify-between">
+          <div className="text-sm leading-5 text-muted-foreground">
+            <p>© {new Date().getFullYear()} | <Link className="underline duration-300 text-muted-foreground hover:text-black hover:no-underline" href={'https://metasyde.com'} target="_blank">Metasyde</Link> - All rights reserved.</p>
+          </div>
         </footer>
       </div>
     </main>
