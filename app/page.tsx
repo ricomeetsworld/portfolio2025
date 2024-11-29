@@ -7,6 +7,7 @@ interface ISocialSoup {
   username: string
   href: string
   platform: string
+  invert?: boolean
 }
 
 export default function Home() {
@@ -15,7 +16,8 @@ export default function Home() {
       imagePath: '/x.svg',
       platform: 'X',
       username: '@ricomeetsworld',
-      href: 'https://x.com/ricomeetsworld'
+      href: 'https://x.com/ricomeetsworld',
+      invert: true
     },
     {
       imagePath: '/linkedin.svg',
@@ -33,7 +35,8 @@ export default function Home() {
       imagePath: '/github.svg',
       platform: 'GitHub',
       username: '@ricomeetsworld',
-      href: 'https://github.com/ricomeetsworld'
+      href: 'https://github.com/ricomeetsworld',
+      invert: true
     },
     {
       imagePath: '/bsky.svg',
@@ -59,7 +62,7 @@ export default function Home() {
                 alt=""
                 width={20}
                 height={20}
-                className="w-5 h-5"
+                className="w-5 h-5 select-none"
               />
             </div>
             <p className="font-semibold text-muted-foreground">Building with disruptive tech</p>
@@ -77,7 +80,7 @@ export default function Home() {
                       alt={`${s.platform} Profile`}
                       width={20}
                       height={20}
-                      className="w-5 h-5 dark:invert"
+                      className={`w-5 h-5 ${s.invert && 'dark:invert'}`}
                     />
                   </div>
                   {s.username}
@@ -113,12 +116,11 @@ export default function Home() {
           <p className="mb-5">My journey began with Python in February 2016 at St Francis Xavier. Progressing into a bachelor's degree at University of Northampton (2017-2020) helped me explore my passion for systems design and problem solving, contributing towards my foundation that led to me landing a £5,500/month tech contract role at 23, and building a tiny ChatGPT chrome extension with +1,100 users at its peak.</p>
           <p>Now, I'm focused on evolving as a fullstack developer, building with disruptive technologies, and creating interactive software solutions that explore new possibilities.</p>
           <button
-            className="w-full py-2 font-semibold text-white transition-colors duration-300 bg-black rounded-md dark:bg-amethyst-500 hover:bg-opacity-80 dark:text-black"
+            className="w-full py-2 mt-6 font-semibold text-white transition-colors duration-300 bg-black rounded-md dark:bg-amethyst-500 hover:bg-opacity-80 dark:text-black"
           >More about me</button>
         </div>
-        <div id="newsletter" className="p-6 space-y-4 rounded-md bg-slate-100">
-          <h2 className="text-xl font-semibold">Email Newsletter</h2>
-          <p>Join <strong>[Shift Forward]</strong> for disruptive tech updates, exclusive offers & members only content directly from me. We don't do spam over here, I promise!</p>
+        <div id="newsletter" className="p-6 space-y-4 bg-white border rounded-md">
+          <p>Join <strong>[Shift Forward]</strong> for disruptive tech updates, exclusive offers & members only content directly from me. We don't do spam, and you can unsub anytime!</p>
           <form className="flex flex-col gap-4">
             <div className="">
               <label htmlFor="name">First Name</label>
@@ -139,7 +141,7 @@ export default function Home() {
               />
             </div>
             <button
-              className="w-full py-2 font-semibold text-white transition-colors duration-300 bg-black rounded-md hover:bg-opacity-80"
+              className="w-full py-2 font-semibold text-white transition-colors duration-300 rounded-md bg-amethyst-500 hover:bg-opacity-80"
             >Become a Shifter</button>
           </form>
         </div>
@@ -156,7 +158,8 @@ export default function Home() {
               <input
                 id="name"
                 type="text"
-                placeholder="Type your name"
+                required
+                placeholder="Your name"
                 className="block w-full px-2 py-1 border rounded-md"
               />
             </div>
@@ -170,7 +173,8 @@ export default function Home() {
               <input
                 id="email"
                 type="email"
-                placeholder="Type your email address"
+                required
+                placeholder="Your email address"
                 className="block w-full px-2 py-1 border rounded-md"
               />
             </div>
@@ -185,13 +189,13 @@ export default function Home() {
                 id="message"
                 required
                 rows={4}
-                placeholder="Type your message"
+                placeholder="Your message"
                 className="flex w-full px-2 py-1 border rounded-md min-h-[80px]"
               />
             </div>
             <button
               className="w-full py-2 font-semibold text-white transition-colors duration-300 bg-black rounded-md hover:bg-opacity-80"
-            >Submit</button>
+            >Send</button>
           </form>
         </div>
         <footer className="flex-row items-center pt-8 mt-16 border-t border-white/15 sm:flex sm:justify-between">
