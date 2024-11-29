@@ -2,7 +2,40 @@ import Link from "next/link";
 import { BlogCard } from "./components/blog-card";
 import Image from "next/image";
 
+interface ISocialSoup {
+  imagePath: string
+  username: string
+  href: string
+}
+
 export default function Home() {
+  const socialSoup: ISocialSoup[] = [
+    {
+      imagePath: '/x.svg',
+      username: '@ricomeetsworld',
+      href: 'https://x.com/ricomeetsworld'
+    },
+    {
+      imagePath: '/linkedin.svg',
+      username: '/enrictrillo',
+      href: 'https://linkedin.com/in/enrictrillo'
+    },
+    {
+      imagePath: '/youtube.svg',
+      username: '@ricomeetsworld',
+      href: 'https://youtube.com/@ricomeetsworld'
+    },
+    {
+      imagePath: '/github.svg',
+      username: '@ricomeetsworld',
+      href: 'https://github.com/ricomeetsworld'
+    },
+    {
+      imagePath: '/bsky.svg',
+      username: '@ricomeetsworld',
+      href: 'https://bsky.app/profile/ricomeetsworld.bsky.social'
+    },
+  ]
   return (
     <main className="min-h-screen font-[family-name:var(--font-geist-sans)]">
       <div className="container max-w-2xl px-4 py-8 mx-auto space-y-8">
