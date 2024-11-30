@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +29,48 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* <header className="border-b border-obsidian-200/80 dark:border-obsidian-800">
+          <div id="header" className="container flex justify-between max-w-4xl px-6 py-4 mx-auto text-sm">
+            <div className="text-left">
+              <span className="block font-serif italic text-muted-foreground">Building with Disruptive Tech</span>
+            </div>
+            <nav className="flex items-center gap-4">
+              <span className="underline duration-300 text-muted-foreground hover:text-black hover:no-underline hover:cursor-pointer">About</span>
+              <span className="underline duration-300 text-muted-foreground hover:text-black hover:no-underline hover:cursor-pointer">Blog</span>
+              <span className="underline duration-300 text-muted-foreground hover:text-black hover:no-underline hover:cursor-pointer">What's Dis Tech? Glossary</span>
+              <span className="underline duration-300 text-muted-foreground hover:text-black hover:no-underline hover:cursor-pointer">Products</span>
+            </nav>
+          </div>
+        </header> */}
+        <nav className="fixed z-50 top-4 left-4 right-4">
+          <div className="container max-w-5xl px-4 mx-auto">
+            <div className="relative flex items-center justify-between p-4 border rounded bg-white/70 backdrop-blur-md neo-brutalism">
+              <Link href="/" className="text-2xl font-bold">YN</Link>
+              <div className="md:hidden">
+                <button className="text-white focus:outline-none">
+                </button>
+              </div>
+              <div className={`md:flex absolute top-full -translate-x-1/2 left-1/2 md:top-auto mt-2 md:mt-0 p-4 md:p-0 rounded-lg md:rounded-none md:shadow-none`}>
+                <ul className="md:flex md:space-x-6">
+                  <li><Link href="#about" className="underline duration-300 text-muted-foreground hover:text-brand-foreground hover:no-underline hover:cursor-pointer">Home</Link></li>
+                  <li><Link href="#about" className="underline duration-300 text-muted-foreground hover:text-brand-foreground hover:no-underline hover:cursor-pointer">About</Link></li>
+                  <li><Link href="#blog" className="underline duration-300 text-muted-foreground hover:text-brand-foreground hover:no-underline hover:cursor-pointer">Blog</Link></li>
+                  <li><Link href="#courses" className="underline duration-300 text-muted-foreground hover:text-brand-foreground hover:no-underline hover:cursor-pointer">Glossary</Link></li>
+                  <li><Link href="#projects" className="underline duration-300 text-muted-foreground hover:text-brand-foreground hover:no-underline hover:cursor-pointer">Store</Link></li>
+                </ul>
+              </div>
+              <Link href="#contact" className="hidden px-4 py-2 text-white transition duration-300 rounded bg-amethyst-500 md:inline-block neo-brutalism hover:text-primary">
+                Get in Touch
+              </Link>
+            </div>
+          </div>
+        </nav>
         {children}
+        <footer className="container max-w-4xl px-6 mx-auto my-16">
+          <div className="flex items-center justify-between text-sm leading-5 text-muted-foreground">
+            <p>© Part of <Link className="underline duration-300 hover:text-black hover:no-underline" href={'https://metasyde.com'} target="_blank">Metasyde LTD</Link> – All rights reserved {new Date().getFullYear()}.</p>
+          </div>
+        </footer>
       </body>
     </html>
   );
