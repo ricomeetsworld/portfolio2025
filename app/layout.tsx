@@ -111,7 +111,7 @@ export default function RootLayout({
                 <li><Link href="#courses" className="hover:bg-accent px-2 py-2 rounded-md duration-300">Glossary</Link></li>
                 <li><Link href="#projects" className="hover:bg-accent px-2 py-2 rounded-md duration-300">Store</Link></li>
               </ul>
-              <button className="md:flex hidden bg-primary hover:bg-primary-hover px-4 py-2 rounded-md font-medium text-sm text-white transition-colors duration-300">Subscribe</button>
+              <button className="md:flex hidden bg-primary hover:bg-primary-hover px-4 py-2 rounded-md ring-0 hover:ring-4 hover:ring-primary/40 font-medium text-sm text-white transition-all duration-300">Subscribe</button>
               {/* <Link href={'/'} className="md:inline-block hidden bg-primary px-4 py-1 rounded-md font-medium text-foreground text-sm">Contact</Link> */}
               <div className="flex md:hidden">Menu</div>
             </div>

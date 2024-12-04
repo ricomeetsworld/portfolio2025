@@ -156,7 +156,7 @@ export default function Home() {
         <div id="outro" className="bg-foreground p-12 border border-border rounded-lg text-background">
           <h3 className={`text-4xl font-black ${brandFont.className}`}>Let's build visions into reality 🧿</h3>
           <p className="text-muted-foreground">Looking to start a new project, build with either AI, Web3 or No-Code, or just want to chat disruptive ideas? I’d love to hear from you!</p>
-          <button className="bg-secondary mt-6 px-4 py-2 rounded-md font-medium text-secondary-foreground text-sm">Talk to me</button>
+          <button className="bg-secondary mt-6 px-4 py-2 rounded-md ring-0 hover:ring-4 hover:ring-secondary/60 font-medium text-secondary-foreground text-sm transition-all duration-300">Talk to me</button>
         </div>
       </div>
     </main>

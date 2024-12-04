@@ -60,6 +60,13 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        ring: {
+          DEFAULT: "",
+          primary: "hsl(var(--primary))",
+          secondary: "hsl(var(--secondary) / 0.4)",
+          accent: "hsl(var(--accent) / 0.4)",
+          muted: "hsl(var(--muted) / 0.4)",
+        },
         border: "hsl(var(--border))",
         borderColor: {
           DEFAULT: "hsl(var(--border))"
