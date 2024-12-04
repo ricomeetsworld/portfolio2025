@@ -26,8 +26,26 @@ const config = {
     },
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+          hover: "hsl(var(--primary) / 0.9)",
+          active: "hsl(var(--primary) / 0.8)",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+          hover: "hsl(var(--secondary) / 0.9)",
+          active: "hsl(var(--secondary) / 0.8)",
+        },
+        muted: "hsl(var(--muted))",
+        hovered: "hsl(var(--hovered))",
+        border: "hsl(var(--border))",
+        borderColor: {
+          DEFAULT: "hsl(var(--border))"
+        },
         transparent: 'transparent',
         current: 'currentColor',
         neropside: '#0f172a',
@@ -179,6 +197,11 @@ const config = {
           800: '#027168',
           900: '#015d55',
         },
+      },
+      borderRadius: {
+        lg: "calc(var(--radius) + var(--radius))",
+        md: "calc(var(--radius) + 2px)",
+        sm: "calc(var(--radius) - 6px)",
       },
       keyframes: {
         marquee: {

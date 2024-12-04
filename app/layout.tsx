@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Link from "next/link";
+import Image from "next/image";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,48 +28,107 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} font-[family-name:var(--font-geist-sans)] antialiased`}
       >
-        {/* <header className="border-b border-obsidian-200/80 dark:border-obsidian-800">
-          <div id="header" className="container flex justify-between max-w-4xl px-6 py-4 mx-auto text-sm">
+        {/* <header className="border-obsidian-200/80 dark:border-obsidian-800 border-b">
+          <div id="header" className="flex justify-between mx-auto px-6 py-4 max-w-4xl text-sm container">
             <div className="text-left">
-              <span className="block font-serif italic text-muted-foreground">Building with Disruptive Tech</span>
+              <span className="block font-serif text-muted-foreground italic">Building with Disruptive Tech</span>
             </div>
             <nav className="flex items-center gap-4">
-              <span className="underline duration-300 text-muted-foreground hover:text-black hover:no-underline hover:cursor-pointer">About</span>
-              <span className="underline duration-300 text-muted-foreground hover:text-black hover:no-underline hover:cursor-pointer">Blog</span>
-              <span className="underline duration-300 text-muted-foreground hover:text-black hover:no-underline hover:cursor-pointer">What's Dis Tech? Glossary</span>
-              <span className="underline duration-300 text-muted-foreground hover:text-black hover:no-underline hover:cursor-pointer">Products</span>
+              <span className="text-muted-foreground hover:text-black underline hover:no-underline duration-300 hover:cursor-pointer">About</span>
+              <span className="text-muted-foreground hover:text-black underline hover:no-underline duration-300 hover:cursor-pointer">Blog</span>
+              <span className="text-muted-foreground hover:text-black underline hover:no-underline duration-300 hover:cursor-pointer">What's Dis Tech? Glossary</span>
+              <span className="text-muted-foreground hover:text-black underline hover:no-underline duration-300 hover:cursor-pointer">Products</span>
             </nav>
           </div>
         </header> */}
-        <nav className="fixed z-50 top-4 left-4 right-4">
-          <div className="container max-w-5xl px-4 mx-auto">
-            <div className="relative flex items-center justify-between p-4 border rounded bg-white/70 backdrop-blur-md neo-brutalism">
-              <Link href="/" className="text-2xl font-bold">YN</Link>
-              <div className="md:hidden">
-                <button className="text-white focus:outline-none">
-                </button>
+        {/* <header>
+          <nav className="top-4 right-6 left-6 z-50 fixed">
+            <div className="mx-auto container">
+              <div className="relative flex justify-between items-center p-4 rounded">
+                <Link href="/" className="font-bold text-2xl">YN</Link>
+                <div className="md:hidden">
+                  <button className="text-white focus:outline-none">
+                  </button>
+                </div>
+                <div className={`hidden md:flex absolute top-full -translate-x-1/2 left-1/2 md:top-auto mt-2 md:mt-0 p-4 md:p-0 rounded-lg md:rounded-none md:shadow-none`}>
+                  <ul className="md:flex md:space-x-6">
+                    <li><Link href="#about" className="hover-underline hover:cursor-pointer">Home</Link></li>
+                    <li><Link href="#about" className="hover-underline hover:cursor-pointer">About</Link></li>
+                    <li><Link href="#blog" className="hover-underline hover:cursor-pointer">Blog</Link></li>
+                    <li><Link href="#courses" className="hover-underline hover:cursor-pointer">Glossary</Link></li>
+                    <li><Link href="#projects" className="hover-underline hover:cursor-pointer">Store</Link></li>
+                  </ul>
+                </div>
+                <Link href="#contact" className="md:inline-block hidden bg-amethyst-500 px-4 py-2 rounded-lg font-semibold text-white text-xs hover:text-primary transition duration-300">
+                  Contact
+                </Link>
               </div>
-              <div className={`md:flex absolute top-full -translate-x-1/2 left-1/2 md:top-auto mt-2 md:mt-0 p-4 md:p-0 rounded-lg md:rounded-none md:shadow-none`}>
-                <ul className="md:flex md:space-x-6">
-                  <li><Link href="#about" className="underline duration-300 text-muted-foreground hover:text-brand-foreground hover:no-underline hover:cursor-pointer">Home</Link></li>
-                  <li><Link href="#about" className="underline duration-300 text-muted-foreground hover:text-brand-foreground hover:no-underline hover:cursor-pointer">About</Link></li>
-                  <li><Link href="#blog" className="underline duration-300 text-muted-foreground hover:text-brand-foreground hover:no-underline hover:cursor-pointer">Blog</Link></li>
-                  <li><Link href="#courses" className="underline duration-300 text-muted-foreground hover:text-brand-foreground hover:no-underline hover:cursor-pointer">Glossary</Link></li>
-                  <li><Link href="#projects" className="underline duration-300 text-muted-foreground hover:text-brand-foreground hover:no-underline hover:cursor-pointer">Store</Link></li>
-                </ul>
-              </div>
-              <Link href="#contact" className="hidden px-4 py-2 text-white transition duration-300 rounded bg-amethyst-500 md:inline-block neo-brutalism hover:text-primary">
-                Get in Touch
-              </Link>
             </div>
-          </div>
-        </nav>
-        {children}
-        <footer className="container max-w-4xl px-6 mx-auto my-16">
-          <div className="flex items-center justify-between text-sm leading-5 text-muted-foreground">
-            <p>© Part of <Link className="underline duration-300 hover:text-black hover:no-underline" href={'https://metasyde.com'} target="_blank">Metasyde LTD</Link> – All rights reserved {new Date().getFullYear()}.</p>
+          </nav>
+        </header> */}
+        <header className="hidden">
+          <nav className="w-full">
+            <div className="bg-background backdrop-blur-sm w-full">
+              <div className="relative flex justify-between items-center mx-auto px-6 max-w-screen-md h-20">
+                <Link href="/">
+                  <div className="rounded-full w-fit h-fit overflow-hidden">
+                    <Image src={'/images/rmw-punk.png'} alt="" width={400} height={400} className="w-8 h-8" />
+                  </div>
+                </Link>
+                <div className={`hidden md:flex mt-2 md:mt-0 p-4 gap-6 md:p-0 absolute -translate-x-1/2 left-1/2 rounded-lg md:rounded-none md:shadow-none`}>
+                  <ul className="md:flex items-center md:space-x-6">
+                    <li><Link href="#about" className="hover-underline hover:cursor-pointer">About</Link></li>
+                    <li><Link href="#blog" className="hover-underline hover:cursor-pointer">Blog</Link></li>
+                    <li><Link href="#courses" className="hover-underline hover:cursor-pointer">What's Dis Tech? Glossary</Link></li>
+                    <li><Link href="#projects" className="hover-underline hover:cursor-pointer">Store</Link></li>
+                  </ul>
+                </div>
+                <Link href={'/'} className="bg-primary px-4 py-1 rounded-lg font-medium text-background">Hire Me</Link>
+              </div>
+            </div>
+          </nav>
+        </header>
+        <header>
+          <nav className="top-6 left-1/2 z-50 fixed px-6 md:px-0 w-full max-w-2xl h-16 -translate-x-1/2">
+            <div id="island" className="relative flex justify-between items-center gap-4 bg-white/80 dark:bg-black/80 backdrop-blur px-6 py-3 border border-border rounded-lg w-full">
+              <div className="rounded-full w-fit h-fit overflow-hidden">
+                <Image src={'/images/rmw-punk.png'} alt="" width={400} height={400} className="w-8 h-8" />
+              </div>
+              <ul className="left-1/2 absolute md:flex gap-3.5 hidden text-sm -translate-x-1/2">
+                <li><Link href="#about" className="hover-underline hover:cursor-pointer">Home</Link></li>
+                <li><Link href="#about" className="hover-underline hover:cursor-pointer">About</Link></li>
+                <li><Link href="#blog" className="hover-underline hover:cursor-pointer">Blog</Link></li>
+                <li><Link href="#courses" className="hover-underline hover:cursor-pointer">Glossary</Link></li>
+                <li><Link href="#projects" className="hover-underline hover:cursor-pointer">Store</Link></li>
+              </ul>
+              <button className="bg-primary hover:bg-primary-hover px-4 py-1 rounded-md font-medium text-background text-sm transition-colors duration-300">Contact</button>
+              {/* <Link href={'/'} className="md:inline-block hidden bg-primary px-4 py-1 rounded-md font-medium text-foreground text-sm">Contact</Link> */}
+              <div className="flex md:hidden">Menu</div>
+            </div>
+          </nav>
+        </header>
+        <header className="hidden px-6">
+          <nav className="relative flex justify-between items-center mx-auto border-b w-full h-16 container">
+            <Link href="/">
+              <div className="rounded-full w-fit h-fit overflow-hidden">
+                <Image src={'/images/rmw-punk.png'} alt="" width={400} height={400} className="w-8 h-8" />
+              </div>
+            </Link>
+            <ul className="left-1/2 absolute flex gap-6 text-sm -translate-x-1/2">
+              <li><Link href="#about" className="hover-underline hover:cursor-pointer">About</Link></li>
+              <li><Link href="#blog" className="hover-underline hover:cursor-pointer">Blog</Link></li>
+              <li><Link href="#courses" className="hover-underline hover:cursor-pointer">What's Dis Tech? Glossary</Link></li>
+              <li><Link href="#projects" className="hover-underline hover:cursor-pointer">Store</Link></li>
+            </ul>
+            <Link href={'/'} className="bg-brand px-2 py-1 rounded-md font-medium font-sans text-foreground text-sm">Subscribe</Link>
+          </nav>
+        </header>
+        <main>{children}</main>
+        <footer className="mx-auto px-6 py-16 max-w-screen-md">
+          <div className="flex justify-start items-center text-muted text-sm leading-5">
+            <p>© Part of <Link className="hover:text-black underline hover:no-underline duration-300" href={'https://metasyde.com'} target="_blank">Metasyde LTD</Link> – All rights reserved {new Date().getFullYear()}.</p>
           </div>
         </footer>
       </body>
