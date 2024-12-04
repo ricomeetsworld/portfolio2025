@@ -13,19 +13,17 @@
   --primary-foreground: 0 0% 95%;
   --secondary: 331 100% 48%;
   --secondary-foreground: 0 0% 95%;
-  --muted: 215 19% 35%;
-  --muted-foreground: 0 0% 90%; 
+  --muted: 0 0% 90%; 
+  --muted-foreground: 215 19% 35%;
   --accent: 0 0% 90%;
-  --accent-foreground: 0 0% 90%;
+  --accent-foreground: 0 0% 6%;
   --destructive: 350 100% 63%;
   --destructive-foreground: 0 0% 95%;
   --border: 214 19% 79%;
   --input: 0 0% 95%;
   --input: 240 5.9% 90%;
   --ring: 240 5.9% 10%;
-  --ring: 0;
   --radius: 0.5rem;
-  --hovered: 0 0% 90%;
 }
 
 
@@ -33,11 +31,24 @@
   :root {
     --background: 0 0% 6%;
     --foreground: 0 0% 95%;
-    --accent: 0 0% 10%;
-    --border: 215 22% 28%;
-;
     --card: 0 0% 6%;
-    --card-foreground: 0 0% 95%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 214 90% 49%;
+    --primary-foreground: 0 0% 95%;
+    --secondary: 331 100% 48%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 0 0% 90%; 
+    --muted-foreground: 215 19% 35%;
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 90%;
+    --destructive: 350 100% 63%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 215 22% 28%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --radius: 0.5rem;
   }
 }
 
@@ -63,6 +74,28 @@ body {
 } */
 .gradient {
   @apply bg-gradient-to-tr from-[var(--brand-foreground)]
+}
+.noise {
+  position: absolute;
+  inset: -300%;
+  height: 600%;
+  width: 600%;
+  -webkit-animation: grain 10s steps(10) infinite;
+  animation: grain 10s steps(10) infinite;
+  background-image: url("https://itssharl.ee/noise.png");
+  opacity: 55%;
+}
+@keyframes grain {
+  0%, 100% { transform:translate(0, 0) }
+  10% { transform:translate(-5%, -10%) }
+  20% { transform:translate(-15%, 5%) }
+  30% { transform:translate(7%, -25%) }
+  40% { transform:translate(-5%, 25%) }
+  50% { transform:translate(-15%, 10%) }
+  60% { transform:translate(15%, 0%) }
+  70% { transform:translate(0%, 15%) }
+  80% { transform:translate(3%, 35%) }
+  90% { transform:translate(-10%, 10%) }
 }
 .hover-underline {
   position: relative;
@@ -92,7 +125,17 @@ body {
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
+    color: hsl(var(--foreground));
+    background: hsl(var(--background));
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: url("../public/cursor-default.svg") 4 4, default;
     @apply font-sans antialiased bg-background text-foreground;
+  }
+  button {
+    @apply duration-300 transition-colors
   }
 }

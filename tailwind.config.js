@@ -40,10 +40,25 @@ const config = {
           hover: "hsl(var(--secondary) / 0.9)",
           active: "hsl(var(--secondary) / 0.8)",
         },
-        muted: "hsl(var(--muted))",
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
         },
         border: "hsl(var(--border))",
         borderColor: {
@@ -202,9 +217,9 @@ const config = {
         },
       },
       borderRadius: {
-        lg: "calc(var(--radius) + var(--radius))",
+        lg: "calc(var(--radius) + 4px)",
         md: "calc(var(--radius) + 2px)",
-        sm: "calc(var(--radius) - 6px)",
+        sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
         marquee: {

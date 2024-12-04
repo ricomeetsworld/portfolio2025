@@ -1,15 +1,8 @@
 import Link from "next/link";
 import { BlogCard } from "./components/blog-card";
 import Image from "next/image";
-import { Plus_Jakarta_Sans, Hanken_Grotesk, Cormorant_Garamond } from 'next/font/google'
-
-interface ISocialSoup {
-  imagePath: string
-  username: string
-  href: string
-  platform: string
-  invert?: boolean
-}
+import { Hanken_Grotesk, Cormorant_Garamond } from 'next/font/google'
+import { socialSoup } from "@/lib/constants";
 
 const brandFont = Hanken_Grotesk({
   weight: ["600", "700", "800", "900"],
@@ -22,40 +15,6 @@ const italicFont = Cormorant_Garamond({
 })
 
 export default function Home() {
-  const socialSoup: ISocialSoup[] = [
-    {
-      imagePath: '/x.svg',
-      platform: 'X',
-      username: '@ricomeetsworld',
-      href: 'https://x.com/ricomeetsworld',
-      invert: true
-    },
-    {
-      imagePath: '/linkedin.svg',
-      platform: 'LinkedIn',
-      username: '/enrictrillo',
-      href: 'https://linkedin.com/in/enrictrillo'
-    },
-    {
-      imagePath: '/youtube.svg',
-      platform: 'YouTube',
-      username: '@ricomeetsworld',
-      href: 'https://youtube.com/@ricomeetsworld'
-    },
-    {
-      imagePath: '/github.svg',
-      platform: 'GitHub',
-      username: '@ricomeetsworld',
-      href: 'https://github.com/ricomeetsworld',
-      invert: true
-    },
-    {
-      imagePath: '/bsky.svg',
-      platform: 'BlueSky',
-      username: '@ricomeetsworld',
-      href: 'https://bsky.app/profile/ricomeetsworld.bsky.social'
-    },
-  ]
   return (
     <main className="min-h-screen">
       <div className="space-y-8 mx-auto mt-32 px-6 py-8 max-w-screen-md">
@@ -81,8 +40,8 @@ export default function Home() {
               <span className="mx-2">·</span>
               <span>🇬🇶, 🇪🇸</span>
             </p>
-            <h1 className={`text-4xl md:text-[44px] text-center font-black ${italicFont.className}`}>I'm Enric 💫 and I build what's next with <span className={`uppercase font-black bg-clip-text bg-gradient-to-r from-blue-500 to-amethyst-500 text-transparent ${brandFont.className}`}>Disruptive Technologies</span></h1>
-            <p className="text-balance text-lg text-muted">I'm a fullstack developer, solopreneur and creator currently based in 🇬🇧 London. Focused on disruptive technologies. Nice to have you here!</p>
+            <h1 className={`text-3xl md:text-[44px] text-center font-black ${italicFont.className}`}>I'm Enric 💫 and I build what's next with <span className={`uppercase font-black bg-clip-text bg-gradient-to-r from-blue-500 to-amethyst-500 text-transparent ${brandFont.className}`}>Disruptive Technologies</span></h1>
+            <p className="text-balance text-lg text-muted-foreground">I'm a fullstack developer, solopreneur and creator currently based in 🇬🇧 London. Focused on disruptive technologies. Nice to have you here!</p>
           </div>
         </div>
         <div id="soup" className="flex flex-wrap justify-center gap-2 mx-auto max-w-lg text-sm">
@@ -107,7 +66,7 @@ export default function Home() {
         </div>
         <div className="">
           <h2 className="border-slate-600/15 mt-16 mb-8 pb-4 border-b font-semibold text-base">Blogs</h2>
-          <div className="gap-6 grid grid-cols-2">
+          <div className="gap-6 grid grid-cols-1 md:grid-cols-2">
             {Array(4).fill({
               title: "How to get started with Phidata Agents",
               description: "A comprehensive guide to building your first AI-powered application using top notch tools like Convex and Beacon AI"
@@ -129,9 +88,9 @@ export default function Home() {
             >More about me</button>
           </div>
         </div>
-        <div id="cta" className="flex justify-between bg-white p-12 border border-border rounded-md text-secondary-foreground">
-          <p className={`text-2xl font-black text-secondary ${brandFont.className}`}>Stack skills to thrive, in the age of AI</p>
-          <button className="bg-secondary px-4 py-1 rounded-md text-secondary-foreground">Start Learning</button>
+        <div id="cta" className="flex md:flex-row flex-col justify-between items-center gap-4 bg-white p-12 border border-border rounded-md text-secondary-foreground">
+          <p className={`text-xl md:text-2xl font-black text-secondary ${brandFont.className}`}>Stack skills to thrive, in the age of AI</p>
+          <button className="bg-secondary hover:bg-secondary-hover px-4 py-1 rounded-md text-secondary-foreground">Start Learning</button>
         </div>
         <div id="newsletter" className="space-y-4 border-obsidian-300 dark:border-obsidian-800 bg-white dark:bg-[#101010] p-6 border rounded-md">
           <p>Join <strong>[Shift Forward]</strong> for disruptive tech updates, exclusive offers & members only content directly from me. We don't do spam, and you can unsub anytime!</p>
@@ -196,8 +155,8 @@ export default function Home() {
         </div>
         <div id="outro" className="bg-foreground p-12 border border-border rounded-lg text-background">
           <h3 className={`text-4xl font-black ${brandFont.className}`}>Let's build visions into reality 🧿</h3>
-          <p>Looking to start a a new project, redesign your website, or just want to chat disruptive ideas? I’d love to hear from you!</p>
-          <button className="bg-secondary px-2 py-1 rounded-md font-medium text-secondary-foreground">Talk to me</button>
+          <p className="text-muted-foreground">Looking to start a new project, build with either AI, Web3 or No-Code, or just want to chat disruptive ideas? I’d love to hear from you!</p>
+          <button className="bg-secondary mt-6 px-4 py-2 rounded-md font-medium text-secondary-foreground text-sm">Talk to me</button>
         </div>
       </div>
     </main>
