@@ -41,7 +41,10 @@ const config = {
           active: "hsl(var(--secondary) / 0.8)",
         },
         muted: "hsl(var(--muted))",
-        hovered: "hsl(var(--hovered))",
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
         border: "hsl(var(--border))",
         borderColor: {
           DEFAULT: "hsl(var(--border))"

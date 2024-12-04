@@ -59,14 +59,11 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <div className="space-y-8 mx-auto mt-32 px-6 py-8 max-w-screen-md">
-        <div className="italic">
-          <h1 className={`text-4xl md:text-[44px] text-center font-black ${italicFont.className}`}>I'm Enric 💫 and I build what's next with <span className={`uppercase font-black bg-clip-text bg-gradient-to-r from-blue-500 to-amethyst-500 text-transparent ${brandFont.className}`}>Disruptive Technologies</span></h1>
-        </div>
         <div id="hero" className="flex flex-col items-center text-center">
           <span className="relative hidden rounded-full w-24 h-24 overflow-hidden shrink-0"><img className="left-1/2 absolute -translate-x-1/2" alt="Profile Picture" src="/images/graduation.jpg" /></span>
           <div className="space-y-2">
             <div
-              className="justify-center items-center gap-2 hidden"
+              className="justify-center items-center gap-1 hidden"
             >
               <h1 className="font-bold text-2xl">Enric J Trillo Nchana</h1>
               <Image
@@ -84,6 +81,7 @@ export default function Home() {
               <span className="mx-2">·</span>
               <span>🇬🇶, 🇪🇸</span>
             </p>
+            <h1 className={`text-4xl md:text-[44px] text-center font-black ${italicFont.className}`}>I'm Enric 💫 and I build what's next with <span className={`uppercase font-black bg-clip-text bg-gradient-to-r from-blue-500 to-amethyst-500 text-transparent ${brandFont.className}`}>Disruptive Technologies</span></h1>
             <p className="text-balance text-lg text-muted">I'm a fullstack developer, solopreneur and creator currently based in 🇬🇧 London. Focused on disruptive technologies. Nice to have you here!</p>
           </div>
         </div>
@@ -91,7 +89,7 @@ export default function Home() {
           {
             socialSoup.map((s, idx) => (
               <Link key={idx} href={s.href} target="_blank">
-                <div className="flex items-center gap-1 hover:bg-hovered px-4 py-1 rounded-full duration-300 cursor-pointer">
+                <div className="flex items-center gap-1 hover:bg-accent px-4 py-1 rounded-full duration-300 cursor-pointer">
                   <div className="w-5 h-5">
                     <Image
                       src={s.imagePath}
