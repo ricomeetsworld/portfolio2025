@@ -105,15 +105,15 @@ export default function RootLayout({
                 </div>
               </div>
               <ul className="left-1/2 absolute md:flex gap-0.5 hidden text-sm -translate-x-1/2">
-                <li><Link href="#about" className="hover:bg-accent px-2 py-2 rounded-md duration-300">Home</Link></li>
-                <li><Link href="#about" className="hover:bg-accent px-2 py-2 rounded-md duration-300">About</Link></li>
-                <li><Link href="#blog" className="hover:bg-accent px-2 py-2 rounded-md duration-300">Blog</Link></li>
-                <li><Link href="#courses" className="hover:bg-accent px-2 py-2 rounded-md duration-300">Glossary</Link></li>
-                <li><Link href="#projects" className="hover:bg-accent px-2 py-2 rounded-md duration-300">Store</Link></li>
+                <li><Link href="/" className="hover:bg-accent px-2 py-2 rounded-md duration-300">Home</Link></li>
+                <li><Link href="/about" className="hover:bg-accent px-2 py-2 rounded-md duration-300">About</Link></li>
+                <li><Link href="/blog" className="hover:bg-accent px-2 py-2 rounded-md duration-300">Blog</Link></li>
+                <li><Link href="#" className="hover:bg-accent px-2 py-2 rounded-md duration-300">Glossary</Link></li>
+                <li><Link href="#" className="hover:bg-accent px-2 py-2 rounded-md duration-300">Store</Link></li>
               </ul>
               <button className="md:flex hidden bg-primary hover:bg-primary-hover px-4 py-2 rounded-md ring-0 hover:ring-4 hover:ring-primary/40 font-medium text-sm text-white transition-all duration-300">Subscribe</button>
               {/* <Link href={'/'} className="md:inline-block hidden bg-primary px-4 py-1 rounded-md font-medium text-foreground text-sm">Contact</Link> */}
-              <div className="flex md:hidden">Menu</div>
+              {/* <div className="flex md:hidden">Menu</div> */}
             </div>
           </nav>
         </header>
@@ -184,7 +184,7 @@ export default function RootLayout({
                     </svg>
                   </div>
 
-                  <p className="mt-4 max-w-xs text-muted">
+                  <p className="mt-4 max-w-xs text-muted-foreground">
                     Fullstack developer, building with disruptive technologies.
                   </p>
 
@@ -265,7 +265,7 @@ export default function RootLayout({
               </div>
             </div>
           </footer>
-          <div id="outro" className="flex md:flex-row flex-col-reverse md:justify-between items-center gap-6 text-muted text-sm leading-5">
+          <div id="outro" className="flex md:flex-row flex-col-reverse md:justify-between items-center gap-6 text-muted-foreground text-sm leading-5">
             <div id="outro-copyright">© {new Date().getFullYear()}. Part of <Link className="hover:text-foreground hover-underline duration-300" href={'https://metasyde.com'} target="_blank">Metasyde LTD</Link> – All rights reserved.</div>
             <div id="outro-policy" className="flex md:flex-row gap-4">
               <span>Terms</span>

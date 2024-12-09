@@ -31,7 +31,7 @@
   :root {
     --background: 0 0% 6%;
     --foreground: 0 0% 95%;
-    --card: 0 0% 6%;
+    --card: 0 0% 0%;
     --card-foreground: 0 0% 100%;
     --popover: 0 0% 6%;
     --popover-foreground: 0 0% 100%;
@@ -40,7 +40,7 @@
     --secondary: 331 100% 48%;
     --secondary-foreground: 0 0% 95%;
     --muted: 0 0% 90%; 
-    --muted-foreground: 215 19% 35%;
+    --muted-foreground: 0 0% 69%;
     --accent: 0 0% 10%;
     --accent-foreground: 0 0% 90%;
     --destructive: 350 100% 63%;
@@ -57,7 +57,6 @@ body {
   background: hsl(var(--background));
   font-family: Arial, Helvetica, sans-serif;
   scroll-behavior: smooth;
-  cursor: url("../public/cursor-default.svg") 4 4, default;
 }
 
 /* .text-muted-foreground {
@@ -132,7 +131,6 @@ body {
     color: hsl(var(--foreground));
     background: hsl(var(--background));
     font-family: Arial, Helvetica, sans-serif;
-    cursor: url("../public/cursor-default.svg") 4 4, default;
     @apply font-sans antialiased bg-background text-foreground;
   }
   button {

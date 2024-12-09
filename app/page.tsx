@@ -2,16 +2,21 @@ import Link from "next/link";
 import { BlogCard } from "./components/blog-card";
 import Image from "next/image";
 import { Hanken_Grotesk, Cormorant_Garamond } from 'next/font/google'
+import localFont from 'next/font/local'
 import { socialSoup } from "@/lib/constants";
 
-const brandFont = Hanken_Grotesk({
-  weight: ["600", "700", "800", "900"],
-  subsets: ['latin']
-})
+  // const brandFont = Hanken_Grotesk({
+  //   weight: ["600", "700", "800", "900"],
+  //   subsets: ['latin']
+  // })
 const italicFont = Cormorant_Garamond({
   weight: ['700'],
   style: 'italic',
   subsets: ['latin'],
+})
+const brandFont = localFont({
+  src: '../public/fonts/ClashGrotesk-Variable.ttf',
+  weight: "100 900"
 })
 
 export default function Home() {
@@ -39,8 +44,8 @@ export default function Home() {
               <span>London, UK</span>
               <span className="mx-2">·</span>
               <span>🇬🇶, 🇪🇸</span>
-            </p>
-            <h1 className={`text-3xl md:text-[44px] text-center font-black ${italicFont.className}`}>I'm Enric 💫 and I build what's next with <span className={`uppercase font-black bg-clip-text bg-gradient-to-r from-blue-500 to-amethyst-500 text-transparent ${brandFont.className}`}>Disruptive Technologies</span></h1>
+            </p>   
+            <h1 className={`text-3xl md:text-[44px] text-center font-black ${italicFont.className}`}>I'm Enric 💫 and I build what's next with <span className={`uppercase font-black p-1 inline-block bg-clip-text bg-gradient-to-r from-blue-500 to-amethyst-500 text-transparent ${brandFont.className}`}>Disruptive Technologies</span></h1>
             <p className="text-balance text-lg text-muted-foreground">I'm a fullstack developer, solopreneur and creator currently based in 🇬🇧 London. Focused on disruptive technologies. Nice to have you here!</p>
           </div>
         </div>
@@ -64,8 +69,8 @@ export default function Home() {
             ))
           }
         </div>
-        <div className="">
-          <h2 className="border-slate-600/15 mt-16 mb-8 pb-4 border-b font-semibold text-base">Blogs</h2>
+        <div className="space-y-4 border-obsidian-300 dark:border-obsidian-800 bg-card p-6 border rounded-md">
+          <h3 className="border-slate-600/15 mb-6 pb-4 border-b font-semibold text-base">Blogs</h3>
           <div className="gap-6 grid grid-cols-1 md:grid-cols-2">
             {Array(4).fill({
               title: "How to get started with Phidata Agents",
@@ -78,11 +83,11 @@ export default function Home() {
             className="bg-black dark:bg-celuria-500 hover:bg-opacity-80 mt-6 py-2 rounded-md w-full font-semibold text-white dark:text-black transition-colors duration-300"
           >See all posts</button>
         </div>
-        <div className="border-obsidian-300 dark:border-obsidian-800 bg-white dark:bg-[#101010] p-4 border rounded-lg">
+        <div className="space-y-4 border-obsidian-300 dark:border-obsidian-800 bg-card p-6 border rounded-md">
           <div id="bio">
             <h3 className="border-slate-600/15 mb-6 pb-4 border-b font-semibold text-base">Short Bio</h3>
-            <p className="mb-5">My journey began with Python in February 2016 at St Francis Xavier. Progressing into a bachelor's degree at University of Northampton (2017-2020) helped me explore my passion for systems design and problem solving, contributing towards my foundation that led to me landing a £5,500/month tech contract role at 23, and building a tiny ChatGPT chrome extension with +1,100 users at its peak.</p>
-            <p>Now, I'm focused on evolving as a fullstack developer, building with disruptive technologies, and creating interactive software solutions that explore new possibilities.</p>
+            <p className="mb-5">My programming journey began in February 2016 by learning Python at St Francis Xavier. Progressing into a bachelor's degree at University of Northampton (2017-2020) helped me explore my passion for systems design and problem solving, contributing towards my foundation that led to me landing a £5,500/month tech contract role at 23, and building a tiny ChatGPT chrome extension with +1,100 users at its peak.</p>
+            <p>Now, I'm focused on evolving as a fullstack developer, building with disruptive technologies, and creating interactive software solutions that explore new possibilities. Beyond tech, I'm a DJ and Producer using music as a melodic expression of my soul.</p>
             <button
               className="bg-black dark:bg-amethyst-500 hover:bg-opacity-80 mt-6 py-2 rounded-md w-full font-semibold text-white dark:text-black transition-colors duration-300"
             >More about me</button>
@@ -92,7 +97,8 @@ export default function Home() {
           <p className={`text-xl md:text-2xl font-black text-secondary ${brandFont.className}`}>Stack skills to thrive, in the age of AI</p>
           <button className="bg-secondary hover:bg-secondary-hover px-4 py-1 rounded-md text-secondary-foreground">Start Learning</button>
         </div>
-        <div id="newsletter" className="space-y-4 border-obsidian-300 dark:border-obsidian-800 bg-white dark:bg-[#101010] p-6 border rounded-md">
+        <div id="newsletter" className="space-y-4 border-obsidian-300 dark:border-obsidian-800 bg-card p-6 border rounded-md">
+          <h3 className="border-slate-600/15 mb-6 pb-4 border-b font-semibold text-base">Newsletter</h3>
           <p>Join <strong>[Shift Forward]</strong> for disruptive tech updates, exclusive offers & members only content directly from me. We don't do spam, and you can unsub anytime!</p>
           <form className="flex flex-col gap-4">
             <div className="">
@@ -118,44 +124,46 @@ export default function Home() {
             >Become a Shifter</button>
           </form>
         </div>
-        <div id="contact" className="">
-          <h3 className="border-slate-600/15 mt-16 mb-8 pb-4 border-b font-semibold text-base">Get In Touch</h3>
-          <form className="flex flex-col gap-4">
-            <div className="">
-              <input
-                id="name"
-                type="text"
-                required
-                placeholder="Your name"
-                className="block border-obsidian-300 dark:border-obsidian-800 bg-white dark:bg-[#171717] px-2 py-1 border rounded-md w-full"
-              />
-            </div>
-            <div className="">
-              <input
-                id="email"
-                type="email"
-                required
-                placeholder="name@email.com"
-                className="block border-obsidian-300 dark:border-obsidian-800 bg-white dark:bg-[#171717] px-2 py-1 border rounded-md w-full"
-              />
-            </div>
-            <div className="">
-              <textarea
-                id="message"
-                required
-                rows={4}
-                placeholder="Your message"
-                className="flex border-obsidian-300 dark:border-obsidian-800 bg-white dark:bg-[#171717] px-2 py-1 border rounded-md w-full min-h-[80px]"
-              />
-            </div>
-            <button
-              className="bg-black hover:bg-opacity-80 py-2 rounded-md w-full font-semibold text-white transition-colors duration-300"
-            >Send</button>
-          </form>
+        <div id="contact">
+          <section className="space-y-4 border-obsidian-300 dark:border-obsidian-800 bg-card p-6 border rounded-md">
+            <h3 className="border-slate-600/15 mb-6 pb-4 border-b font-semibold text-base">Get In Touch</h3>
+            <form className="flex flex-col gap-4">
+              <div className="">
+                <input
+                  id="name"
+                  type="text"
+                  required
+                  placeholder="First name"
+                  className="block border-obsidian-300 dark:border-obsidian-800 bg-white dark:bg-[#171717] px-2 py-1 border rounded-md w-full"
+                />
+              </div>
+              <div className="">
+                <input
+                  id="email"
+                  type="email"
+                  required
+                  placeholder="name@email.com"
+                  className="block border-obsidian-300 dark:border-obsidian-800 bg-white dark:bg-[#171717] px-2 py-1 border rounded-md w-full"
+                />
+              </div>
+              <div className="">
+                <textarea
+                  id="message"
+                  required
+                  rows={4}
+                  placeholder="Type your message"
+                  className="flex border-obsidian-300 dark:border-obsidian-800 bg-white dark:bg-[#171717] px-2 py-1 border rounded-md w-full min-h-[80px]"
+                />
+              </div>
+              <button
+                className="bg-black hover:bg-opacity-80 py-2 rounded-md w-full font-semibold text-white transition-colors duration-300"
+              >Send</button>
+            </form>
+          </section>
         </div>
         <div id="outro" className="bg-foreground p-12 border border-border rounded-lg text-background">
           <h3 className={`text-4xl font-black ${brandFont.className}`}>Let's build visions into reality 🧿</h3>
-          <p className="text-muted-foreground">Looking to start a new project, build with either AI, Web3 or No-Code, or just want to chat disruptive ideas? I’d love to hear from you!</p>
+          <p>Looking to start a new project, build with either AI, Web3 or No-Code, or just want to chat disruptive ideas? I’d love to hear from you!</p>
           <button className="bg-secondary mt-6 px-4 py-2 rounded-md ring-0 hover:ring-4 hover:ring-secondary/60 font-medium text-secondary-foreground text-sm transition-all duration-300">Talk to me</button>
         </div>
       </div>
